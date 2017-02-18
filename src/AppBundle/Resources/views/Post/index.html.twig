@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+{% block title %} Form page {% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div>
+        <h2>This is the index page</h2>
+        <h4>Form is gonna be down here</h4>
+
+    </div>
+
+    <div ng-controller="myCtrl" ng-init="name = 'damn'">
+        {{ form_start(form)}}
+             {{ form_widget(form.name, {'attr': {
+                 'ng-model': 'name'
+             } }) }}
+    </div>
+    {{ form_end(form) }}
+
+{% endblock %}

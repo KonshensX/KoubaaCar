@@ -2,16 +2,23 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %} - Koubaa Car</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-        <meta name="author" content="Coderthemes">
+        <meta name="author" content="CoderThemes">
+
+        <!-- Angular JS Section is gonna be here -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" ></script>
+
+        <script src="{{ asset('bundles/app/js/app.js') }}"></script>
 
         <link rel="shortcut icon" href="{{ asset('bundles/app/img/favicon_1.ico') }}">
 
         <!--Morris Chart CSS -->
+        {#
         <link rel="stylesheet" href="assets/plugins/morris/morris.css">
-
+        #}
         <link href="{{ asset('bundles/app/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{  asset('bundles/app/css/core.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('bundles/app/css/components.css') }}" rel="stylesheet" type="text/css" />
@@ -22,14 +29,14 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('bundles/app/img/favicon_1.ico') }}" />
     </head>
-    <body>
+    <body ng-app="myApp">
         {% block body %}{% endblock %}
         <script>
             var resizefunc = [];
         </script>
 
         <!-- jQuery  -->
-        <script src="{{ asset('bundles/app/js/jquery.min.js')"}}></script>
+        <script src="{{ asset('bundles/app/js/jquery.min.js')}} "></script>
         <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('bundles/app/js/detect.js') }}"></script>
         <script src="{{ asset('bundles/app/js/fastclick.js') }}"></script>
@@ -42,36 +49,42 @@
         {# PLUGINS #}
 
         {# THESE SCRIPTS TO BE ADDED IF NEEDED #}
-        <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+{#
+<script src="assets/plugins/peity/jquery.peity.min.js"></script>
 
-        <!-- jQuery  -->
-        <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
-        <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
+<!-- jQuery  -->
+<script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
 
 
 
-        <script src="assets/plugins/morris/morris.min.js"></script>
-        <script src="assets/plugins/raphael/raphael-min.js"></script>
+<!-- End of Angular JS Section -->
+<script src="assets/plugins/morris/morris.min.js"></script>
+<script src="assets/plugins/raphael/raphael-min.js"></script>
 
-        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+<script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
 
-        <script src="assets/pages/jquery.dashboard.js"></script>
+<script src="assets/pages/jquery.dashboard.js"></script>
+#}
 
-        <script src="{{ asset('bundles/app/js/jquery.core.js') }}"></script>
-        <script src="{{ asset('bundles/app/js/jquery.app.js') }}"></script>
 
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
+<script src="{{ asset('bundles/app/js/jquery.core.js') }}"></script>
+<script src="{{ asset('bundles/app/js/jquery.app.js') }}"></script>
 
-                $(".knob").knob();
+<script type="text/javascript">
+    /*
+    jQuery(document).ready(function($) {
+        $('.counter').counterUp({
+            delay: 100,
+            time: 1200
+        });
 
-            });
-        </script>
+        $(".knob").knob();
 
-        {% block javascripts %}{% endblock %}
-    </body>
+    });
+    */
+</script>
+
+{% block javascripts %}{% endblock %}
+</body>
 </html>
